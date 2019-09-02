@@ -14,14 +14,14 @@ namespace PageObjectLibrary.PageObjects.AutomationPractice.Dresses.Purchase_a_Dr
 
         private IWebElement termOfServicesCheckBox => GetDriver().FindElement(By.CssSelector("input[id='cgv']"));
 
-        public void acceptTermsOfServicesCheckBox()
+        public void AcceptTermsOfServicesCheckBox()
         {
             termOfServicesCheckBox.Click();
         }
 
-        public PurchasePaymentPage clickOnProceedButton()
+        public PurchasePaymentPage ClickOnProceedButton()
         {
-            acceptTermsOfServicesCheckBox();
+            AcceptTermsOfServicesCheckBox();
             proceedCheckoutButton.Click();
             return new PurchasePaymentPage();
         }

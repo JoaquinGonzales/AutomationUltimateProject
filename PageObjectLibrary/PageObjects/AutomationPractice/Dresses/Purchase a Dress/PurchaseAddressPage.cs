@@ -12,7 +12,7 @@ namespace PageObjectLibrary.PageObjects.AutomationPractice.Dresses.Purchase_a_Dr
     {
         private IWebElement proceedButton => GetDriver().FindElement(By.CssSelector("button[name='processAddress']"));
 
-        public PurchaseShippingPage clickOnProceedButton()
+        public PurchaseShippingPage ClickOnProceedButton()
         {
             proceedButton.Click();
             return new PurchaseShippingPage();

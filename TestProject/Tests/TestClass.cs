@@ -37,13 +37,13 @@ namespace TestProject.Tests
         public void ShopADressUsingValidData()
         {
             var SignInPage = navigationSteps.GoToSignInPage();
-            var myAcountPage = SignInPage.filloutForm("joaquinjqn2@test.com", "Test1234");
+            var myAcountPage = SignInPage.FilloutForm("joaquinjqn2@test.com", "Test1234");
             var purchaseSummaryPage = navigationSteps.navigateToPurchaseSummaryPage();
-            string expectedResultProductPrice = purchaseSummaryPage.getPriceFromSummaryPage();
+            string expectedResultProductPrice = purchaseSummaryPage.GetPriceFromSummaryPage();
             var orderHistoryPage = navigationSteps.navigateToOrderHistoryPage();
-            orderHistoryPage.showDetails();
+            orderHistoryPage.ShowDetails();
 
-            string ActualResultProductPrice = orderHistoryPage.getTotalPriceFromOrderHistory();
+            string ActualResultProductPrice = orderHistoryPage.GetTotalPriceFromOrderHistory();
 
             Assert.AreEqual(expectedResultProductPrice, ActualResultProductPrice);
         }
@@ -53,10 +53,10 @@ namespace TestProject.Tests
         {
             GenereateNewEmailAddress g = new GenereateNewEmailAddress();
             var SignInPage = navigationSteps.GoToSignInPage();
-            var createNewAccountPage = SignInPage.createNewAccount(g.generateEmail());
+            var createNewAccountPage = SignInPage.CreateNewAccount(g.GenerateEmail());
             string expectedResult = "Joaquin Gonzales";
-            var MyAccountPage = createNewAccountPage.fillOutNewAccountForm("Joaquin", "Gonzales", "Test123", "26", "7", "1990", "Joaquin", "Gonzales", "AssureSoft", "America Av.", "Cocha", "Louisiana", "00000", "21", "Test Other Information","4471939","73773296","TestAlias");
-            string ActualResult = MyAccountPage.returnAccountName();
+            var MyAccountPage = createNewAccountPage.FillOutNewAccountForm("Joaquin", "Gonzales", "Test123", "26", "7", "1990", "Joaquin", "Gonzales", "AssureSoft", "America Av.", "Cocha", "Louisiana", "00000", "21", "Test Other Information","4471939","73773296","TestAlias");
+            string ActualResult = MyAccountPage.ReturnAccountName();
 
             Assert.AreEqual(expectedResult, ActualResult);
         }

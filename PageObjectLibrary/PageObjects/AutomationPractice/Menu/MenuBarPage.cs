@@ -13,20 +13,19 @@ namespace PageObjectLibrary.PageObjects.AutomationPractice.Menu
         IWebElement womenNavigationBarOption => GetDriver().FindElement(By.CssSelector("a[title='Women']"));
         IWebElement casualDressesOption => GetDriver().FindElement(By.CssSelector("a[title='Casual Dresses']"));
 
-        public void moveMouseOverWomenOption()
+        public void MoveMouseOverWomenOption()
         {
             actions.MoveToElement(womenNavigationBarOption).Perform();
-            //womenNavigationBarOption.Click();
         }
-        public void selectCasualDressOption()
+        public void SelectCasualDressOption()
         {
             casualDressesOption.Click();
         }
 
         public CasualDressesPage GoToCasualAddressOption()
         {
-            moveMouseOverWomenOption();
-            selectCasualDressOption();
+            MoveMouseOverWomenOption();
+            SelectCasualDressOption();
             return new CasualDressesPage();
         }
 

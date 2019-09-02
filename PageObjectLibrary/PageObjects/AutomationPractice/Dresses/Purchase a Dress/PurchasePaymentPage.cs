@@ -16,25 +16,25 @@ namespace PageObjectLibrary.PageObjects.AutomationPractice.Dresses.Purchase_a_Dr
         private IWebElement confirmOrderButton => GetDriver().FindElement(By.XPath("//span[text()='I confirm my order']"));
         private IWebElement confirmationMessage => GetDriver().FindElement(By.CssSelector("p[class='cheque-indent']"));
 
-        public void selectPayByBankWire()
+        public void SelectPayByBankWire()
         {
             payByBankWireButton.Click();
         }
 
-        public void confirmOrder()
+        public void ConfirmOrder()
         {
             confirmOrderButton.Click();
         }
 
-        public string returnConfirmationMessage()
+        public string ReturnConfirmationMessage()
         {
             return confirmationMessage.Text;
         }
 
-        public MyAccountPage goToMyAccountPage()
+        public MyAccountPage GoToMyAccountPage()
         {
             var menupage = new MenuPage();
-            return menupage.clickOnMyAccountPage();
+            return menupage.ClickOnMyAccountPage();
         }
     }
 }

@@ -23,12 +23,12 @@ namespace PageObjectLibrary.PageObjects.AutomationPractice.My_Account
             return menuBarPage.GoToCasualAddressOption();
         }
 
-        public OrderHistoryPage goToOrderHistory()
+        public OrderHistoryPage GoToOrderHistory()
         {
             myOrderHistoryButton.Click();
             return new OrderHistoryPage();
         }
-        public string returnAccountName()
+        public string ReturnAccountName()
         {
             return accountButton.Text;
         }   

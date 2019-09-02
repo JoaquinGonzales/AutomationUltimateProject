@@ -31,17 +31,17 @@ namespace PageObjectLibrary.Steps.AutomationPractice.Navigation
         {
             var myAccountPage = new MyAccountPage();
             var casualDressesPage = myAccountPage.NavigateToMyDresses();
-            return casualDressesPage.selectFisrtProduct();
+            return casualDressesPage.SelectFisrtProduct();
         }
 
         public OrderHistoryPage navigateToOrderHistoryPage()
         {
             var purchaseSummaryPage = new PurchaseSummaryPage();
-            var purchaseAddressPage = purchaseSummaryPage.clickProcceedCheckoutButton();
-            var purchaseShippingPage = purchaseAddressPage.clickOnProceedButton();
-            var purchasePaymentPage = purchaseShippingPage.clickOnProceedButton();
-            var myAccountPage = purchasePaymentPage.goToMyAccountPage();
-            return myAccountPage.goToOrderHistory();
+            var purchaseAddressPage = purchaseSummaryPage.ClickProcceedCheckoutButton();
+            var purchaseShippingPage = purchaseAddressPage.ClickOnProceedButton();
+            var purchasePaymentPage = purchaseShippingPage.ClickOnProceedButton();
+            var myAccountPage = purchasePaymentPage.GoToMyAccountPage();
+            return myAccountPage.GoToOrderHistory();
         }
 
     }

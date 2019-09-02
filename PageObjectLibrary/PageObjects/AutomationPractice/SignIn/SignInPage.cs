@@ -17,37 +17,37 @@ namespace PageObjectLibrary.PageObjects.AutomationPractice.Menu
         private IWebElement emailAddressforNewAccount => GetDriver().FindElement(By.Id("email_create"));
         private IWebElement createNewAccountButton => GetDriver().FindElement(By.Id("SubmitCreate"));
 
-        public void setEmailAddress(string email)
+        public void SetEmailAddress(string email)
         {
             emailField.SendKeys(email);
         }
 
-        public void setPassword(string password)
+        public void SetPassword(string password)
         {
             passwordField.SendKeys(password);
         }
 
-        public void clickSubmitButton()
+        public void ClickSubmitButton()
         {
             signInButton.Click();
         }
 
-        public MyAccountPage filloutForm(string email, string password)
+        public MyAccountPage FilloutForm(string email, string password)
         {
-            setEmailAddress(email);
-            setPassword(password);
-            clickSubmitButton();
+            SetEmailAddress(email);
+            SetPassword(password);
+            ClickSubmitButton();
             return new MyAccountPage();
         }
 
-        public void clickCreateNewAccountButton()
+        public void ClickCreateNewAccountButton()
         {
             createNewAccountButton.Click();
         }
-        public CreateNewAccountPage createNewAccount(string emailAddress)
+        public CreateNewAccountPage CreateNewAccount(string emailAddress)
         {
             emailAddressforNewAccount.SendKeys(emailAddress);
-            clickCreateNewAccountButton();
+            ClickCreateNewAccountButton();
             return new CreateNewAccountPage();
         }
         

@@ -25,12 +25,10 @@ namespace PageObjectLibrary.PageObjects.AutomationPractice.Menu
             return signInPage;
         }
 
-        public MyAccountPage clickOnMyAccountPage()
+        public MyAccountPage ClickOnMyAccountPage()
         {
             myAccountButton.Click();
             return new MyAccountPage();
         }
- 
-
     }
 }

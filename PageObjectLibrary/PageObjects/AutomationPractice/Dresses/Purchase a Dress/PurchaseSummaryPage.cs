@@ -14,11 +14,11 @@ namespace PageObjectLibrary.PageObjects.AutomationPractice.Dresses.Purchase_a_Dr
         private IWebElement proceedCheckOutButton => GetDriver().FindElement(By.CssSelector("p[class='cart_navigation clearfix'] a[title='Proceed to checkout']"));
 
 
-        public string getPriceFromSummaryPage()
+        public string GetPriceFromSummaryPage()
         {
             return priceInSummary.Text;
         }
-        public PurchaseAddressPage clickProcceedCheckoutButton()
+        public PurchaseAddressPage ClickProcceedCheckoutButton()
         {
             proceedCheckOutButton.Click();
             return new PurchaseAddressPage();

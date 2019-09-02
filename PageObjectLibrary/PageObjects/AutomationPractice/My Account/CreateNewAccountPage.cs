@@ -11,7 +11,6 @@ namespace PageObjectLibrary.PageObjects.AutomationPractice.My_Account
 {
     public class CreateNewAccountPage:BasePage
     {
-        //private IWebElement radioButton => GetDriver().FindElement(By.XPath("//div[@class='radio']/span/input[@id='id_gender1']"));
         private IWebElement firstNameField => GetDriver().FindElement(By.Id("customer_firstname"));
         private IWebElement lastNameField => GetDriver().FindElement(By.Name("customer_lastname"));
         private IWebElement passwordField => GetDriver().FindElement(By.XPath("//input[@data-validate='isPasswd']"));
@@ -33,148 +32,145 @@ namespace PageObjectLibrary.PageObjects.AutomationPractice.My_Account
         private IWebElement cellNumberfield => GetDriver().FindElement(By.Id("phone_mobile"));
         private IWebElement aliasField => GetDriver().FindElement(By.Id("alias"));
         private IWebElement sendAccountButton => GetDriver().FindElement(By.Id("submitAccount"));
-        public void selectGender()
+        public void SelectGender()
         {
-            /*var radioButton = GetDriver().FindElement(By.XPath("//div[@class='radio']/span/input[@id='id_gender1']"));
-            wait.Until(ExpectedConditions.ElementToBeClickable(radioButton));*/
             var radouButton = GetDriver().FindElement(By.XPath("//div[@class='radio']/span/input[@id='id_gender1']"));
-            actions.Click(radouButton).Perform();
-            //radioButton.Click();
+            actions.Click(radouButton).Perform();  
         }
 
-        public void fillOutCustomerFirstName(string firstName)
+        public void FillOutCustomerFirstName(string firstName)
         {
             firstNameField.SendKeys(firstName);
         }
 
-        public void fillOutCustomerLastName(string lastName)
+        public void FillOutCustomerLastName(string lastName)
         {
             lastNameField.SendKeys(lastName);
         }
 
-        public void fillOutPassword(string password)
+        public void FillOutPassword(string password)
         {
             passwordField.SendKeys(password);
         }
 
-        public void selectDays(string days)
+        public void SelectDays(string days)
         {
             SelectElement selectForDay = new SelectElement(dayDropDown);
             selectForDay.SelectByValue(days);
         }
 
-        public void selectMonth(string month)
+        public void SelectMonth(string month)
         {
             SelectElement SelectForMonth = new SelectElement(monthDropDown);
             SelectForMonth.SelectByValue(month);
         }
 
-        public void selectYear(string year)
+        public void SelectYear(string year)
         {
             SelectElement SelectForYear = new SelectElement(yearDropDown);
             SelectForYear.SelectByValue(year);
         }
 
-        public void checkNewLetterCheckBox()
+        public void CheckNewLetterCheckBox()
         {
             newsLetterCheckBox.Click();
         }
 
-        public void checkOtherCheckBox()
+        public void CheckOtherCheckBox()
         {
             otherCheckBox.Click();
         }
 
-        public void fillOutFirstName(string fname)
+        public void FillOutFirstName(string fname)
         {
             firstName.SendKeys(fname);
         }
 
-        public void fillOutLastName(string lname)
+        public void FillOutLastName(string lname)
         {
             lastName.SendKeys(lname);
         }
 
-        public void fillOutCompany(string companyName)
+        public void FillOutCompany(string companyName)
         {
             company.SendKeys(companyName);
         }
 
-        public void fillOutAddress(string address)
+        public void FillOutAddress(string address)
         {
             adrressField.SendKeys(address);
         }
 
-        public void fillOutCity(string city)
+        public void FillOutCity(string city)
         {
             cityField.SendKeys(city);
         }
 
-        public void selectStateDropDown(string state)
+        public void SelectStateDropDown(string state)
         {
             SelectElement selectState = new SelectElement(stateDropDown);
             selectState.SelectByText(state);
         }
 
-        public void fillOutZipCode(string zipCode)
+        public void FillOutZipCode(string zipCode)
         {
             zipCodefield.SendKeys(zipCode);
         }
 
-        public void chooseCountryDropDown(string country)
+        public void ChooseCountryDropDown(string country)
         {
             SelectElement selectCountry = new SelectElement(selectCountryDropDown);
             selectCountry.SelectByValue(country);
         }
 
-        public void fillOutOtherInformation(string otherInformation)
+        public void FillOutOtherInformation(string otherInformation)
         {
             otherInformationfield.SendKeys(otherInformation);
         }
 
-        public void fillOutPhoneField(string phone)
+        public void FillOutPhoneField(string phone)
         {
             homePhonefield.SendKeys(phone);
         }
 
-        public void fillOutCellNumber(string cellnumber)
+        public void FillOutCellNumber(string cellnumber)
         {
             cellNumberfield.SendKeys(cellnumber);
         }
 
-        public void fillOutAliasField(string alias)
+        public void FillOutAliasField(string alias)
         {
             aliasField.SendKeys(alias);
         }
 
-        public void clickSendNewAccountButton()
+        public void ClickSendNewAccountButton()
         {
             sendAccountButton.Click();
         }
-        public MyAccountPage fillOutNewAccountForm(string customerFirstName, string customerLastName, string password, string day, string month, string year,string firstName, string lastName, string companyName, string address, string city, string state, string postalCode, string countryCode, string otherInfo, string phone, string cellPhone, string alias)
+        public MyAccountPage FillOutNewAccountForm(string customerFirstName, string customerLastName, string password, string day, string month, string year,string firstName, string lastName, string companyName, string address, string city, string state, string postalCode, string countryCode, string otherInfo, string phone, string cellPhone, string alias)
         {
-            selectGender();
-            fillOutCustomerFirstName(customerFirstName);
-            fillOutCustomerLastName(customerLastName);
-            fillOutPassword(password);
-            selectDays(day);
-            selectMonth(month);
-            selectYear(year);
-            checkNewLetterCheckBox();
-            checkOtherCheckBox();
-            fillOutFirstName(firstName);
-            fillOutLastName(lastName);
-            fillOutCompany(companyName);
-            fillOutAddress(address);
-            fillOutCity(city);
-            selectStateDropDown(state);
-            fillOutZipCode(postalCode);
-            chooseCountryDropDown(countryCode);
-            fillOutOtherInformation(otherInfo);
-            fillOutPhoneField(phone);
-            fillOutCellNumber(cellPhone);
-            fillOutAliasField(alias);
-            clickSendNewAccountButton();
+            SelectGender();
+            FillOutCustomerFirstName(customerFirstName);
+            FillOutCustomerLastName(customerLastName);
+            FillOutPassword(password);
+            SelectDays(day);
+            SelectMonth(month);
+            SelectYear(year);
+            CheckNewLetterCheckBox();
+            CheckOtherCheckBox();
+            FillOutFirstName(firstName);
+            FillOutLastName(lastName);
+            FillOutCompany(companyName);
+            FillOutAddress(address);
+            FillOutCity(city);
+            SelectStateDropDown(state);
+            FillOutZipCode(postalCode);
+            ChooseCountryDropDown(countryCode);
+            FillOutOtherInformation(otherInfo);
+            FillOutPhoneField(phone);
+            FillOutCellNumber(cellPhone);
+            FillOutAliasField(alias);
+            ClickSendNewAccountButton();
             return new MyAccountPage();
         }
     }

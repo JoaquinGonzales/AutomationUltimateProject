@@ -19,7 +19,7 @@ namespace PageObjectLibrary.PageObjects.AutomationPractice.Dresses
         {
             addToCartButton.Click();
         }
-        public PurchaseSummaryPage clickProceedToCheckOutButton()
+        public PurchaseSummaryPage ClickProceedToCheckOutButton()
         {
             AddFirstProductToCart();
             proceedToCheckoutButton.Click();

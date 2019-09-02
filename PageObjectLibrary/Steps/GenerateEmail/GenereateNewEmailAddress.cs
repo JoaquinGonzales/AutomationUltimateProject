@@ -17,7 +17,7 @@ namespace PageObjectLibrary.Utils
             int number = r.Next();
             email = _user + number.ToString() + _domain;
         }
-        public string generateEmail()
+        public string GenerateEmail()
         {
             return email;
         }

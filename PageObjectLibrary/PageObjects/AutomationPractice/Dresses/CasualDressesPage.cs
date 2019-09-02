@@ -16,17 +16,15 @@ namespace PageObjectLibrary.PageObjects
         private IWebElement image => GetDriver().FindElement(By.CssSelector("a[class='product_img_link'] img"));
         private IWebElement addToCart => GetDriver().FindElement(By.CssSelector("a[title='Proceed to checkout']"));
         
-        public void clickAddProductButton()
+        public void ClickAddProductButton()
         {
             actions.MoveToElement(image).Perform();
-           /* var casualDressFirst = GetDriver().FindElement(By.CssSelector("a[title = 'Add to cart']"));
-            actions.MoveToElement(casualDressFirst).Perform();*/
             casualDressFirst.Click();
         }
 
-        public PurchaseSummaryPage selectFisrtProduct()
+        public PurchaseSummaryPage SelectFisrtProduct()
         {
-            clickAddProductButton();
+            ClickAddProductButton();
             addToCart.Click();
             return new PurchaseSummaryPage();
         }

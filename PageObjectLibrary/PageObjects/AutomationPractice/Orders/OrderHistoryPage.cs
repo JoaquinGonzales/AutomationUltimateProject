@@ -17,12 +17,12 @@ namespace PageObjectLibrary.PageObjects.AutomationPractice.Orders
 
       
 
-        public void showDetails()
+        public void ShowDetails()
         {
             displayOrderDetails.Click();
         }
 
-        public string getTotalPriceFromOrderHistory()
+        public string GetTotalPriceFromOrderHistory()
         {
             actions.MoveToElement(totalPriceLabel).Perform();
             return totalPriceLabel.Text;

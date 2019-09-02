@@ -71,7 +71,7 @@
     <Compile Include="PageObjects\AutomationPractice\Dresses\CasualDressesPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\AutomationPractice\Navigation\NavigationSteps.cs" />
-    <Compile Include="Utils\GenereateNewEmailAddress.cs" />
+    <Compile Include="Steps\GenerateEmail\GenereateNewEmailAddress.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
