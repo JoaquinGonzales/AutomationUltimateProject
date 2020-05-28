@@ -1,6 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PageObjectLibrary.PageObjects.AutomationPractice.ContactUs;
 using PageObjectLibrary.Utils;
+using System;
+using System.IO;
+using System.Reflection;
 using TestProject.Hooks;
 
 namespace TestProject.Tests
@@ -11,9 +14,12 @@ namespace TestProject.Tests
         [TestMethod]
         public void ContactUsFormIsSentWithValidData()
         {
+            var outPutDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
+            var iconPath = Path.Combine(outPutDirectory, @"resources\TextFile.txt");
+            string icon_path = new Uri(iconPath).LocalPath;
             var contactUsPage = navigationSteps.GoToContactUsPage();            
             contactUsPage.FillContactUsForm(ContactUsPage.Options.ByText, "Customer service", "daniel.terceros@test.com",
-                "1234", @"C:\Users\joaquin.gonzales\Desktop\test.txt", "My product did not arrive as expected");
+                "1234", icon_path, "My product did not arrive as expected");
 
             string actualMessage = contactUsPage.GetConfirmationLabel();
             string expectedMessage = "Your message has been successfully sent to our team.";
@@ -23,9 +29,12 @@ namespace TestProject.Tests
         [TestMethod]
         public void ContactUsFormIsNotSentWithInvalidData()
         {
+            var outPutDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
+            var iconPath = Path.Combine(outPutDirectory, @"resources\TextFile.txt");
+            string icon_path = new Uri(iconPath).LocalPath;
             var contactUsPage = navigationSteps.GoToContactUsPage();
             contactUsPage.FillContactUsForm(ContactUsPage.Options.ByText, "Customer service", "invalid email",
-                "1234", @"C:\Users\joaquin.gonzales\Desktop\test.txt", "My product did not arrive as expected");
+                "1234", icon_path , "My product did not arrive as expected");
 
             string actualMessage = contactUsPage.GetErrorLabel();
             string expectedMessage = "Invalid email address.";

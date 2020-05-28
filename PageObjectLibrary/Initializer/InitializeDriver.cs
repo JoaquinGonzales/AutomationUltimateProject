@@ -2,6 +2,8 @@
 using OpenQA.Selenium.Firefox;
 using PageObjectLibrary.Base;
 using System;
+using System.IO;
+using System.Reflection;
 
 namespace PageObjectLibrary.Initializer
 {
@@ -16,7 +18,7 @@ namespace PageObjectLibrary.Initializer
                     ChromeOptions chromeOptions = new ChromeOptions();
                     chromeOptions.AddArgument("--start-maximized");
                     chromeOptions.AddArgument("--incognito");
-                    SetDriver(new ChromeDriver(@"C:\Users\joaquin.gonzales\Desktop\drivers", chromeOptions));
+                    SetDriver(new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), chromeOptions));
                     break;
                 case "Firefox":
                     FirefoxOptions firefoxOptions = new FirefoxOptions();
